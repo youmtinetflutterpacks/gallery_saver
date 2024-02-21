@@ -1,0 +1,32 @@
+name: gallery_saver_example
+description: Demonstrates how to use the gallery_saver plugin.
+
+publish_to: "none"
+
+environment:
+  sdk: ">=3.1.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^1.0.7
+  path_provider: ^2.0.1
+  http: ^1.1.0
+
+  gallery_saver:
+    path: ../
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  #
