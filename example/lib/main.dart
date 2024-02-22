@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'dart:io';
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -174,7 +173,7 @@ class _ScreenshotWidgetState extends State<ScreenshotWidget> {
         child: SizedBox.expand(
           child: TextButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.pink),
+              backgroundColor: MaterialStateProperty.all(const ui.Color(0xFF038347)),
             ),
             onPressed: _saveScreenshot,
             child: Text(screenshotButtonText, style: TextStyle(fontSize: textSize, color: Colors.white)),
