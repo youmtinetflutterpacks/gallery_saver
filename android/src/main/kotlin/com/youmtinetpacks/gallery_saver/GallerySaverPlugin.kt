@@ -9,7 +9,6 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-import io.flutter.plugin.common.PluginRegistry.Registrar
 
 class GallerySaverPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
 
@@ -28,7 +27,6 @@ class GallerySaverPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         when (call.method) {
             "saveImage" -> gallerySaver?.checkPermissionAndSaveFile(call, result, MediaType.image)
             "saveVideo" -> gallerySaver?.checkPermissionAndSaveFile(call, result, MediaType.video)
-            else -> result.notImplemented()
         }
     }
 

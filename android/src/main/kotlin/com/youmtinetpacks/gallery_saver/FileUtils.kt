@@ -172,12 +172,11 @@ internal object FileUtils {
             source.height, matrix,
             true
         )
-
         val values = ContentValues()
-        values.put(MediaStore.Images.Thumbnails.KIND, MediaStore.Images.Thumbnails.MICRO_KIND)
-        values.put(MediaStore.Images.Thumbnails.IMAGE_ID, id.toInt())
-        values.put(MediaStore.Images.Thumbnails.HEIGHT, thumb.height)
-        values.put(MediaStore.Images.Thumbnails.WIDTH, thumb.width)
+        values.put(MediaStore.Images.Media.GENRE, MediaStore.Images.Media.GENRE)
+        values.put(MediaStore.Images.Media.DOCUMENT_ID, id.toInt())
+        values.put(MediaStore.Images.Media.HEIGHT, thumb.height)
+        values.put(MediaStore.Images.Media.WIDTH, thumb.width)
 
         val thumbUri = contentResolver.insert(
             MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI, values
@@ -189,7 +188,7 @@ internal object FileUtils {
             if (thumbUri != null) {
                 outputStream = contentResolver.openOutputStream(thumbUri)
             }
-        }}catch (e: Exception){
+        }}catch (e: FileNotFoundException){
         //avoid crashing on devices that do not support thumb
         }
     }
